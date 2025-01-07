@@ -1,5 +1,7 @@
-<div class="file-upload-container">
-  <h2>Upload de Arquivo Word</h2>
-  <input type="file" (change)="onFileSelected($event)" accept=".doc,.docx"/>
-  <button (click)="onUpload()">Upload</button>
+<div class="file-upload-container container mt-5">
+  <h2 class="text-center">Upload de Arquivo Word</h2>
+  <div class="form-group">
+    <input type="file" class="form-control-file" (change)="onFileSelected($event)" accept=".doc,.docx"/>
+  </div>
+  <app-button customClass="btn-primary" (click)="onUpload()">Upload</app-button>
 </div>

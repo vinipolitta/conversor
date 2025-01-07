@@ -2,6 +2,41 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
+# Design System do Conversor de Arquivos Word para PDF
+
+Este documento descreve o design system utilizado na aplicação Angular para converter arquivos Word em PDF. O design system foi criado para garantir consistência visual, facilidade de manutenção e escalabilidade.
+
+## Objetivos do Design System
+
+- **Consistência**: Garantir que todos os componentes da aplicação sigam um padrão visual coeso.
+- **Reutilização**: Facilitar a criação e reutilização de componentes em diferentes partes da aplicação.
+- **Escalabilidade**: Permitir a adição de novos componentes e estilos sem comprometer a estrutura existente.
+- **Facilidade de Manutenção**: Simplificar a manutenção e atualização dos estilos da aplicação.
+
+## Estrutura do Projeto
+
+A estrutura do projeto foi organizada para separar os estilos globais dos componentes específicos, tornando mais fácil gerenciar e expandir o design system.
+
+```plaintext
+src/
+├── app/
+│   ├── components/
+│   │   └── file-upload/
+│   │       ├── file-upload.component.html
+│   │       ├── file-upload.component.scss
+│   │       └── file-upload.component.ts
+│   ├── design-system/
+│   │   ├── button/
+│   │   │   ├── button.component.html
+│   │   │   ├── button.component.scss
+│   │   │   └── button.component.ts
+├── styles/
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   ├── _global.scss
+│   └── styles.scss
+
+
 ## Development server
 
 To start a local development server, run:

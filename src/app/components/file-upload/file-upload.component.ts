@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { FileUploadService } from '../../services/file-upload.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonComponent } from '../../shared/design-system/button/button.component';
 
 @Component({
   selector: 'app-file-upload',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, ButtonComponent],
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.scss',
 })
