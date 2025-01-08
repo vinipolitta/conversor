@@ -15,8 +15,8 @@ interface NavItem {
 export class NavService {
   // Itens de navegação iniciais
   private navItems: NavItem[] = [
-    { path: 'convert-to-pdf', title: 'Conversão para PDF', component: FileUploadComponent },
     { path: 'home', title: 'Home', component: HomeComponent },
+    { path: 'convert-to-pdf', title: 'Conversão de WOORD para PDF', component: FileUploadComponent },
   ];
 
   // Método para obter os itens de navegação
