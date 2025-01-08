@@ -3,6 +3,7 @@ import { FileUploadService } from '../../services/file-upload.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from '../../shared/design-system/button/button.component';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -12,7 +13,10 @@ import { ButtonComponent } from '../../shared/design-system/button/button.compon
 })
 export class FileUploadComponent {
   selectedFile: File | null = null;
-  constructor(private fileUploadService: FileUploadService) {}
+  constructor(
+    private fileUploadService: FileUploadService,
+    private toastService: ToastService
+  ) {}
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
   }
@@ -22,10 +26,10 @@ export class FileUploadComponent {
         (response) => {
           console.log(response);
 
-          console.log('Arquivo enviado com sucesso!', response);
+          this.toastService.showSuccess('Arquivo enviado com sucesso!');
         },
         (error) => {
-          console.error('Erro ao enviar arquivo', error);
+          this.toastService.showError('Selecione um arquivo primeiro.');
         }
       );
     }

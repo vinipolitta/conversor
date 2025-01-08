@@ -6,3 +6,24 @@
 @import './app/styles/global';
 
 @import 'bootstrap/scss/bootstrap';
+
+
+.toast-success {
+  background-color: $success-color !important;
+  color: $light-color !important;
+}
+
+.toast-error {
+  background-color: $danger-color !important;
+  color: $light-color !important;
+}
+
+.toast-warning {
+  background-color: $warning-color !important;
+  color: $dark-color !important;
+}
+
+.toast-info {
+  background-color: $info-color !important;
+  color: $light-color !important;
+}
