@@ -29,7 +29,7 @@ export class FileUploadComponent {
       this.fileUploadService.uploadFile(this.selectedFile).subscribe(
         (response) => {
           console.log(response);
-          this.toastService.showSuccess('Arquivo enviado com sucesso!', '' ,"bottom-left");
+          this.toastService.showSuccess('Arquivo enviado com sucesso!');
         },
         (error) => {
           this.toastService.showError('Erro ao enviar o arquivo.');

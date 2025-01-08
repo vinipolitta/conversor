@@ -1,0 +1,12 @@
+<header class="app-header">
+  <div class="container">
+    <h1>Minha Aplicação</h1>
+    <nav>
+      <ul>
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.path">{{ item.title }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

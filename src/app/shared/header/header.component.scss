@@ -1,0 +1,40 @@
+
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+
+.app-header {
+  background-color: $primary-color;
+  color: $light-color;
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      margin: 0;
+    }
+
+    nav {
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li {
+          a {
+            color: $light-color;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+              color: darken($light-color, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
