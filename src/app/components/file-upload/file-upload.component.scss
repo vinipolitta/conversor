@@ -5,11 +5,13 @@
 .file-upload-container {
   @include center-flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px;
   background-color: $light-color;
   border: 1px solid $dark-color;
   border-radius: 8px;
   @include box-shadow;
+  width: 150%;
+  max-width: 1000px;
 
   h2 {
     color: $primary-color;
@@ -18,22 +20,36 @@
 
   input[type="file"] {
     margin: 20px 0;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid $dark-color;
     border-radius: 4px;
+    font-size: 1.2em;
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
   }
 
   button {
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: $primary-color;
     color: $light-color;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 1.2em;
 
     &:hover {
       background-color: darken($primary-color, 10%);
     }
   }
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); // Ajuste a altura com base no header e footer
 }

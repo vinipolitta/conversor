@@ -1,0 +1,80 @@
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/global';
+
+.app-header {
+  background-color: $primary-color;
+  color: $light-color;
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.app-footer {
+  background-color: $dark-color;
+  color: $light-color;
+  padding: 10px 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); // Adjust the height based on the header and footer height
+}
+
+.file-upload-container {
+  @include center-flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: $light-color;
+  border: 1px solid $dark-color;
+  border-radius: 8px;
+  @include box-shadow;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  input[type="file"] {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid $dark-color;
+    border-radius: 4px;
+    font-size: 1.2em;
+  }
+
+  button {
+    padding: 15px 30px;
+    background-color: $primary-color;
+    color: $light-color;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
