@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 
@@ -10,16 +10,12 @@ export class FileUploadService {
 
   constructor(private http: HttpClient) {}
 
-  uploadFile(file: File): Observable<any> {
-    const uploadData = new FormData();
-    uploadData.append('file', file, file.name);
-    return this.http
-      .post(`${this.apiUrl}/word-to-pdf`, uploadData, { responseType: 'json' })
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          console.error('Erro ao enviar arquivo:', error);
-          return throwError(error);
-        })
-      );
+  uploadFile(file: File, conversionType: string): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('conversionType', conversionType);
+    const headers = new HttpHeaders();
+    headers.append('Accept', 'application/json');
+    return this.http.post(`${this.apiUrl}/upload`, formData, { headers });
   }
 }

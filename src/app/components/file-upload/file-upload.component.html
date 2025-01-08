@@ -1,7 +1,22 @@
-<div class="file-upload-container container mt-5">
-  <h2 class="text-center">Upload de Arquivo Word</h2>
+<div class="file-upload-container container mt-5" [formGroup]="uploadForm">
+  <h2 class="text-center">Upload de Arquivo</h2>
   <div class="form-group">
-    <input type="file" class="form-control-file" (change)="onFileSelected($event)" accept=".doc,.docx"/>
+    <label for="conversionType">Tipo de Conversão:</label>
+    <div id="conversionType">
+      <div *ngFor="let option of conversionOptions" class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          [id]="option.id"
+          formControlName="conversionType"
+          [value]="option.value"
+        >
+        <label class="form-check-label" [for]="option.id">{{ option.label }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="file" class="form-control-file" (change)="onFileSelected($event)" accept=".doc,.docx,.pdf"/>
   </div>
   <app-button customClass="btn-primary" (click)="onUpload()">Upload</app-button>
 </div>
